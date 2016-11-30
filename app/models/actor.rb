@@ -1,3 +1,6 @@
 class Actor < ApplicationRecord
   belongs_to :user
+  has_many :filmings
+  has_many :movies, through: :filmings
+  has_many :authors, trough: :filmings
 end
