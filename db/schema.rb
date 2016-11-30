@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130164403) do
+ActiveRecord::Schema.define(version: 20161130164554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,9 @@ ActiveRecord::Schema.define(version: 20161130164403) do
     t.integer  "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "author_id"
     t.index ["actor_id"], name: "index_filmings_on_actor_id", using: :btree
+    t.index ["author_id"], name: "index_filmings_on_author_id", using: :btree
     t.index ["movie_id"], name: "index_filmings_on_movie_id", using: :btree
   end
 
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 20161130164403) do
   add_foreign_key "actors", "users"
   add_foreign_key "authors", "users"
   add_foreign_key "filmings", "actors"
+  add_foreign_key "filmings", "authors"
   add_foreign_key "filmings", "movies"
   add_foreign_key "movies", "users"
 end
