@@ -1,8 +1,9 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%#= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%#= image_tag "logo.png" %>
-  <%# end %>
+    <h2>Miewer</h2>
+  <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -58,7 +59,8 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post a film"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%#= link_to t(".top_call_to_action", default: "Post a film"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Post a film</button>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

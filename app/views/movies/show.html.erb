@@ -5,6 +5,7 @@
          <h3><%= @movie.title %></h3>
          <p><%= @movie.description %></p>
          <p>posted by <em><%= @movie.user.email %></em></p>
+        <p>Il y a <%= time_ago_in_words(@movie.created_at) %></p>
       </div>
     </div>
   </div>
