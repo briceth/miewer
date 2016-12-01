@@ -6,14 +6,20 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy]
 
-  resources :movies do
-    resources :reviews, only: [:new, :create]
+  concern :reviews do |options|
+    resources :reviews, options
   end
 
-  resources :actors do
-    resources :reviews, only: [:new, :create]
+
+  resources :movies, only: [:index, :show, :create] do
+    concerns :reviews, only: [:new, :create]
+  end
+  resources :actors, only: [:index, :show] do
+    concerns :reviews, only: [:new, :create]
   end
 
-  resources :authors
+  resources :authors, only: [:index, :show] do
+   concerns :reviews, only: [:new, :create]
+  end
 
 end
