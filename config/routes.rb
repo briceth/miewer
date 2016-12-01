@@ -13,9 +13,11 @@ Rails.application.routes.draw do
 
   resources :movies, only: [:index, :show, :create] do
     concerns :reviews, only: [:new, :create]
+    resources :actors, module: :movies
   end
   resources :actors, only: [:index, :show] do
     concerns :reviews, only: [:new, :create]
+      resources :movies
   end
 
   resources :authors, only: [:index, :show] do

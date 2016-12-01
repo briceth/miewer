@@ -12,5 +12,6 @@ class Movie < ApplicationRecord
 validates :description, length: { minimum: 0, maximum: 2000 }
 validates :picture, presence: true
 
-  accepts_nested_attributes_for :filmings
+  accepts_nested_attributes_for :actors
+  validates_associated :actors
 end
