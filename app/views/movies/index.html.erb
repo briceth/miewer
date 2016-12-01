@@ -5,7 +5,7 @@
         <% @movies.each do |movie| %>
           <div class="col-xs-12 col-sm-4 col-md-3">
             <%= link_to movie_path(movie) do %>
-              <div class="card" style="background-image:url('https://unsplash.it/200/300/?random');">
+              <div class="card" style="background-image:url('<%= movie.picture? ? cloudinary_url(movie.picture, height: 300, width: 400, crop: :fill) : image_path('background.jpg') %>');">
                   <div class="card-category">Popular</div>
                     <div class="card-description">
                       <h3><%= movie.title %></h3>
