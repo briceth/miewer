@@ -7,8 +7,15 @@
           <%= @actor.profession %>
           <%= @actor.age %>
           <%= @actor.nationality %>
-          <%= @actor.biography %>
+          <%= @actor.biography %> <br><br>
+
           <%= render partial: "reviews/reviews", locals: {reviewable: @actor} %>
+
+          <% @actor.movies.each do |movie| %>
+            <%= movie.title %>
+            <%= movie.description %>
+          <% end %>
+
           <%= render partial: "reviews/form", locals: {reviewable: @actor} %>
       </div>
     </div>
