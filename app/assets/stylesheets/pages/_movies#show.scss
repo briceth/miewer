@@ -4,6 +4,11 @@
   height: 100vh;
 
 }
+.display {
+  display: flex;
+  align-items:center;
+  height: 563px;
+}
 .movie {
   background-color: white;
   box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);
@@ -12,15 +17,19 @@
   padding-right: 50px;
 
   h3 {
+    padding-top: 5px;
     font-family: 'Bungee', cursive;
   }
   p {
     font-family: 'Dosis', sans-serif;
   }
 }
-
 .picture {
   height: 100vh;
   display: flex;
   align-items:center;
+  justify-content: center;
+}
+.image-movie {
+  box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);
 }
