@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   # root to: 'movies#index'
+
   resources :users, only: [:show, :edit, :update, :destroy]
 
   resources :movies
