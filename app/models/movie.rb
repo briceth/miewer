@@ -10,4 +10,5 @@ class Movie < ApplicationRecord
             uniqueness: true,
             length: { minimum: 2 }
 validates :description, length: { minimum: 0, maximum: 2000 }
+validates :picture, presence: true
 end

@@ -2,18 +2,19 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6 col-md-offset-3">
-          <%= @actor.first_name %>
-          <%= @actor.last_name %>
-          <%= @actor.profession %>
-          <%= @actor.age %>
-          <%= @actor.nationality %>
-          <%= @actor.biography %> <br><br>
+         <h3><%= @actor.first_name %> <%= @actor.last_name %></h3>
+          <p><strong><%= @actor.profession %> - <%= @actor.age %> ans - <%= @actor.nationality %></strong></p>
+          <p><%= @actor.biography %></p>
 
-          <%= render partial: "reviews/reviews", locals: {reviewable: @actor} %>
+          <p><%= render partial: "reviews/reviews", locals: {reviewable: @actor}, class: "review" %></p>
 
+
+          <p>Filmographie:</p>
           <% @actor.movies.each do |movie| %>
+
             <%= movie.title %>
-            <%= movie.description %>
+            <%#= movie.picture %>
+
           <% end %>
 
           <%= render partial: "reviews/form", locals: {reviewable: @actor} %>
