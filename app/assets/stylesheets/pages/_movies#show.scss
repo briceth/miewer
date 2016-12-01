@@ -1,0 +1,26 @@
+.wrapper-movie {
+  background-color: #21C5BD;
+  // background:linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
+  height: 100vh;
+
+}
+.movie {
+  background-color: white;
+  box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  h3 {
+    font-family: 'Bungee', cursive;
+  }
+  p {
+    font-family: 'Dosis', sans-serif;
+  }
+}
+
+.picture {
+  height: 100vh;
+  display: flex;
+  align-items:center;
+}
