@@ -1,0 +1,4 @@
+<%= simple_form_for [reviewable, Review.new] do |f|%>
+  <%= f.input_field :body, class: "form-control" %>
+  <%= f.submit %>
+<% end %>

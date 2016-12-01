@@ -6,6 +6,9 @@
          <p><%= @movie.description %></p>
          <p>posted by <em><%= @movie.user.email %></em></p>
         <p>Il y a <%= time_ago_in_words(@movie.created_at) %></p>
+
+        <%= render partial: "reviews/reviews", locals: {reviewable: @movie} %>
+        <%= render partial: "reviews/form", locals: {reviewable: @movie} %>
       </div>
     </div>
   </div>

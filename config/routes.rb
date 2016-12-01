@@ -6,9 +6,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy]
 
-  resources :movies
+  resources :movies do
+    resources :reviews, only: [:new, :create]
+  end
 
-  resources :actors
+  resources :actors do
+    resources :reviews, only: [:new, :create]
+  end
 
   resources :authors
 

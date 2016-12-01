@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+        <% @actors.each do |actor| %>
+          <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <%= link_to actor_path(actor) do %>
+              <%= actor.first_name %>
+              <%= actor.last_name %>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
