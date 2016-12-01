@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   def create
     if params[:movie_id].present?
-      @reviewable = Movie.find(params[:movie_id])
+     @reviewable = Movie.find(params[:movie_id])
       @review = @reviewable.reviews.new(reviews_params)
       @review.user = current_user
       @review.save
@@ -23,3 +23,4 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:body)
   end
 end
+
