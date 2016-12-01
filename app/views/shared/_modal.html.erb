@@ -1,15 +1,27 @@
-<!-- Small modal -->
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <%= simple_form_for @movie do |f| %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :date %>
-        <%= f.input :picture %>
-        <%= f.input :picture_cache, as: :hidden %>
-        <%= f.submit 'Enregistrer', class: "btn btn-primary" %>
-      <% end %>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+          <%= simple_form_for @movie do |f| %>
+            <%= f.input :title %>
+            <%= f.input :description %>
+            <%= f.input :date %>
+            <%= f.input :actors %>
+            <%= f.input :picture %>
+            <%= f.input :picture_cache, as: :hidden %>
+      </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit 'Enregistrer', class: "btn btn-primary" %>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>

@@ -4,8 +4,10 @@
         <% @actors.each do |actor| %>
           <div class="col-xs-12 col-md-6 col-md-offset-3">
             <%= link_to actor_path(actor) do %>
-              <%= actor.first_name %>
-              <%= actor.last_name %>
+              <%= div_for actor do %>
+                <%= actor.first_name.titleize %>
+                <%= actor.last_name.titleize %>
+              <% end %>
             <% end %>
           </div>
         <% end %>
