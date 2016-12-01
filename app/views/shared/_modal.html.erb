@@ -23,6 +23,8 @@
                 <p><strong>Avec quels acteurs?</strong></p>
                 <%= p.text_area :first_name, placeholder: "prénom", class: "form-control" %>
                 <%= p.text_area :last_name, placeholder: "Nom", row: 10, class: "form-control"%>
+                <%= p.file_field :image_id %>
+                <%= p.hidden_field :image_id_cache %>
               </div>
             <% end %>
       </div>

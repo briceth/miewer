@@ -7,6 +7,9 @@
               <%= div_for actor do %>
                 <%= actor.first_name.titleize %>
                 <%= actor.last_name.titleize %>
+                <% if actor.image_id? %>
+                  <%= cl_image_tag actor.image_id, height: 50, width: 70, crop: :fill %>
+                <% end %>
               <% end %>
             <% end %>
           </div>
