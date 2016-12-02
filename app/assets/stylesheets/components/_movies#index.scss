@@ -1,3 +1,7 @@
+.wrapper-cards {
+  background-color: #FF6666;
+  height: 100vh;
+}
 .card {
   margin-top: 26px;
   height: 300px;
@@ -5,6 +9,8 @@
   background-size: cover !important;
   color: white;
   position: relative;
+  box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 .card-user {
   position: absolute;

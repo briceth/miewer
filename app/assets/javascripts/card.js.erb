@@ -4,25 +4,21 @@ $(document).ready(function() {
   var description = $('div.card-description').hide();
 
   $('div.card').each(function(index, element) {
-
     $(this).mouseenter(function() {
       var id = element.id;
       var category = element.children[0];
       var description = element.children[1];
 
-    $('div#' + id).mouseenter(function() {
-        $(category).fadeIn();
-        $(description).fadeIn();
-    });
-    $('div#' + id).mouseleave(function() {
-        $(category).fadeOut(1000);
-        $(description).fadeOut(1000);
-    });
-
-
+      $('div#' + id).mouseenter(function() {
+          $(category).fadeIn();
+          $(description).fadeIn();
+      });
+      $('div#' + id).mouseleave(function() {
+          $(category).fadeOut(1000);
+          $(description).fadeOut(1000);
+      });
     });
   });
-
 });
 
 
