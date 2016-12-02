@@ -8,9 +8,9 @@
             <p><%= movie.description %></p>
             <p>posted by <strong><%= movie.user.email %></strong></p>
             <p><em><%= time_ago_in_words(movie.created_at) %></em></p>
-            <div class="reviews">
+            <div id="reviews">
             <% if movie.reviews.blank? %>
-              <p>Soyez le premier à un mettre un commentaire <%= movie.title %></p>
+              <p>Soyez le premier à un mettre un commentaire sur <%= movie.title %></p>
             <% else %>
               <%= render partial: "reviews/reviews", locals: {reviewable: movie} %>
             <% end %>

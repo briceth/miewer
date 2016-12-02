@@ -1,13 +1,1 @@
-<% if @review.errors.any? %>
-  // Render new review form with errors
-  $('#new_review').html("<%= j render render partial: "reviews/reviews", locals: {reviewable: @reviewable} %>");
-<% else %>
-  // Create a paragraph for the new review. But hide it.
-  var new_review = $("<%= j render partial: "reviews/reviews", locals: {reviewable: @reviewable} %>").hide();
-  // Add it to the DOM, at the end of the existing reviews. It's still hidden.
-  $('#<%= dom_id(@reviewable) %>').append(new_review);
-  // Show the new review with an animation!
-  new_review.slideDown();
-  // Reset the form
-  $('#new_review').html("<%= j render partial: "reviews/form", locals: {reviewable: @reviewable} %>");
-<% end %>
+$('div#reviews').append("<%= j render partial: "reviews/reviews", locals: {reviewable: @reviewable} %>");
