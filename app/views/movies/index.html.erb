@@ -5,12 +5,12 @@
         <% @movies.each_with_index do |movie, index| %>
           <div class="col-xs-12 col-sm-4 col-md-3">
             <%= link_to movie_path(movie) do %>
-                <div class="card" id="movie_<%= index + 1 %>" style="background-image:url('<%= movie.picture? ? cloudinary_url(movie.picture, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>');">
-                    <div class="card-category"><%= movie.category %></div>
-                      <div class="card-description">
-                        <h3><%= movie.title.titleize %></h3>
-                      </div>
-                </div>
+              <div class="card" id="movie_<%= index + 1 %>" style="background-image:url('<%= movie.picture? ? cloudinary_url(movie.picture, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>');">
+                  <div class="card-category"><%= movie.category %></div>
+                    <div class="card-description">
+                      <h3><%= movie.title.titleize %></h3>
+                    </div>
+              </div>
                 <% end %>
               </div>
             <% end %>
