@@ -2,17 +2,24 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-      <div class="display">
-        <%= div_for(@movie, class: "foo") do |movie|%>
-          <h3><strong><%= movie.title.titleize %></strong></h3>
-          <p><%= movie.description %></p>
-          <p>posted by <strong><%= movie.user.email %></strong></p>
-          <p><em><%= time_ago_in_words(movie.created_at) %></em></p>
-
-          <%= render partial: "reviews/reviews", locals: {reviewable: movie} %>
-          <%= render partial: "reviews/form", locals: {reviewable: movie} %>
-        <% end %>
-      </div>
+        <div class="display">
+          <%= div_for(@movie, class: "foo") do |movie|%>
+            <h3><strong><%= movie.title.titleize %></strong></h3>
+            <p><%= movie.description %></p>
+            <p>posted by <strong><%= movie.user.email %></strong></p>
+            <p><em><%= time_ago_in_words(movie.created_at) %></em></p>
+            <div class="reviews">
+            <% if movie.reviews.blank? %>
+              <p>Soyez le premier à un mettre un commentaire <%= movie.title %></p>
+            <% else %>
+              <%= render partial: "reviews/reviews", locals: {reviewable: movie} %>
+            <% end %>
+            </div>
+            <div id="new-review">
+              <%= render partial: "reviews/form", locals: {reviewable: movie} %>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="xs-12 col-md-6">
         <div class="picture">

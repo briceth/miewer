@@ -2,7 +2,7 @@ class ActorsController < ApplicationController
 
   def index
     # tous les actors
-    @actors = Actor.all
+    @actors = Actor.all.order(:last_name)
     # tous les actors dont le film est en salle en ce moment
   end
 
