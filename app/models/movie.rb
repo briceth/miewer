@@ -1,3 +1,28 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id               :integer          not null, primary key
+#  title            :string
+#  date             :date
+#  description      :text
+#  picture          :string
+#  user_id          :integer
+#  participant_type :string
+#  participant_id   :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  available        :boolean
+#
+# Indexes
+#
+#  index_movies_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_2c7f519372  (user_id => users.id)
+#
+
 class Movie < ApplicationRecord
   mount_uploader :picture, PhotoUploader
   belongs_to :user, optional: true
