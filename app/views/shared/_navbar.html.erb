@@ -1,12 +1,6 @@
 
-<% if user_signed_in? && (params[:controller]) == "movies" %>
+<% if user_signed_in? && (params[:controller]) == "movies" && params[:action] == "index" %>
   <%= render "shared/navbar_components/navbar_movies_index" %>
-
-<% elsif (params[:controller]) == "pages" && params[:action] == "search" %>
-  <%= render "shared/navbar_components/navbar_visitors_search" %>
-
 <% else %>
-
   <%= render "shared/navbar_components/navbar" %>
-
 <% end %>
