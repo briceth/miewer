@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @movies_available = Movie.available
     @movie = Movie.new
     @movie.actors.new
   end

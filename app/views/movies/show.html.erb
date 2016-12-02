@@ -10,7 +10,7 @@
             <p><em><%= time_ago_in_words(movie.created_at) %></em></p>
             <div id="reviews">
             <% if movie.reviews.blank? %>
-              <p>Soyez le premier à un mettre un commentaire sur <%= movie.title %></p>
+              <p>Soyez le premier à un mettre un commentaire sur <strong><%= movie.title %></strong></p>
             <% else %>
               <%= render partial: "reviews/reviews", locals: {reviewable: movie} %>
             <% end %>

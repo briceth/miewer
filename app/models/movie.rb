@@ -39,4 +39,6 @@ validates :picture, presence: true
 
   accepts_nested_attributes_for :actors
   validates_associated :actors
+
+  scope :available, -> { where(available: :true) }
 end
