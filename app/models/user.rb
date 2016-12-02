@@ -33,4 +33,9 @@ class User < ApplicationRecord
   has_many :movies
   has_many :authors
   has_many :reviews
+
+ validates :username,
+            :presence => true,
+            :uniqueness => {:case_sensitive => false},
+            length: { minimum: 2 }
 end
