@@ -2,18 +2,16 @@
 #
 # Table name: movies
 #
-#  id               :integer          not null, primary key
-#  title            :string
-#  date             :date
-#  description      :text
-#  picture          :string
-#  user_id          :integer
-#  participant_type :string
-#  participant_id   :integer
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  available        :boolean
-#  category         :string
+#  id          :integer          not null, primary key
+#  title       :string
+#  date        :date
+#  description :text
+#  picture     :string
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  available   :boolean
+#  category    :string
 #
 # Indexes
 #
