@@ -14,7 +14,8 @@
               <%= f.input :title %>
               <%= f.input :description %>
               <%= f.input :date %>
-              <%#= f.input :category %>
+              <%= f.label :category %>
+              <%= f.select :category, [ 'Action', 'Horreur', 'Dramatique', 'Comédie', 'Documentaire' ], prompt: "Sélectionnez"  %>
               <%= f.input :picture %>
               <%= f.input :picture_cache, as: :hidden %>
               <%= f.input :available, as: :boolean, checked_value: true, unchecked_value: false, inline_label: 'en salle actuellement?' %>
