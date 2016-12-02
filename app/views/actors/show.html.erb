@@ -1,23 +1,23 @@
 <div class="wrapper-actor-info">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-sm-4 col-sm-6 col-xs-12">
-         <h3><%= @actor.first_name.titleize %> <%= @actor.last_name.titleize %></h3>
-          <p><strong><%= @actor.profession.titleize %> - <%#= @actor.age %> ans - <%#= @actor.nationality.titleize %></strong></p>
-          <p><%= @actor.biography %></p>
-          <p><%= pluralize(@actor.reviews.count, "review") %></p>
-          <p><%= render partial: "reviews/reviews", locals: {reviewable: @actor}, class: "review" %></p>
-
-
-          <p>Filmographie:</p>
+      <div class="col-xs-12 col-md-6">
+        <p>Filmographie:</p>
           <% @actor.movies.each do |movie| %>
             <%= div_for movie do %>
               <%= movie.title.titleize %>
-            <%#= movie.picture %>
+              <%= cl_image_tag movie.picture, height: 50, width: 40, crop: :fill %>
             <% end %>
           <% end %>
-
-          <%= render partial: "reviews/form", locals: {reviewable: @actor} %>
+        </div>
+        <div class="col-xs-12 col-md-6">
+           <h3><%= @actor.first_name.titleize %> <%= @actor.last_name.titleize %></h3>
+            <p><strong><%= @actor.profession.titleize %> - <%#= @actor.age %> ans - <%#= @actor.nationality.titleize %></strong></p>
+            <p><%= @actor.biography %></p>
+            <p><%= pluralize(@actor.reviews.count, "review") %></p>
+            <p><%= render partial: "reviews/reviews", locals: {reviewable: @actor}, class: "review" %></p>
+            <%= render partial: "reviews/form", locals: {reviewable: @actor} %>
+        </div>
       </div>
     </div>
   </div>
