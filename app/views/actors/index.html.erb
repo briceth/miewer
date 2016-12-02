@@ -9,7 +9,7 @@
                 <div class="card-picture" id="actor_<%= index%>" style="background-image:url('<%= actor.image_id? ? cloudinary_url(actor.image_id, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>')">
                     <div class="card-hover">
                       <% if actor.first_name? && actor.last_name? %>
-                        <p><%= time_ago_in_words(actor.created_at) %></p>
+                        <p><%= time_ago_in_words(actor.created_at) %></p><br>
                         <p><%= pluralize(actor.reviews.count, "review") %></p>
                     </div>
                   </div>

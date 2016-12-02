@@ -9,18 +9,16 @@
     <% end %>
   <% end %>
 
-
   <div class="navbar-right hidden-xs hidden-sm">
-
 
     <% if user_signed_in? %>
 
       <%= link_to actors_path, class: "navbar-brand" do  %>
-        <%= image_tag "actors.png" %>
+        <%= image_tag "actors.png", data: "Acteurs" %>
       <% end %>
 
       <%= link_to movies_path, class: "navbar-brand" do %>
-        <%= image_tag "movies.png" %>
+        <%= image_tag "movies.png", data: "Acteurs" %>
       <% end %>
       <div class="navbar-item">
         <div class="dropdown">
@@ -36,7 +34,6 @@
       </div>
 
     <% else %>
-
 
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-item navbar-link" %>
 

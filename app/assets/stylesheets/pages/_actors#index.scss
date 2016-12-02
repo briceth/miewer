@@ -25,6 +25,13 @@
   background-position: center;
   position: relative;
 }
+.card-hover {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
 .list-inline {
   padding: 5px;
   display: flex;
