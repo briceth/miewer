@@ -6,21 +6,24 @@
           <%= link_to actor_path(actor) do %>
             <div class="card-actor">
               <div class="card-body">
-                <div class="card-picture" id="actor_<%= index%>" style="background-image:url('<%= actor.image_id? ? cloudinary_url(actor.image_id, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>')"></div>
+                <div class="card-picture" id="actor_<%= index%>" style="background-image:url('<%= actor.image_id? ? cloudinary_url(actor.image_id, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>')">
+                    <div class="card-hover">
+                      <% if actor.first_name? && actor.last_name? %>
+                      <h4><%= actor.first_name.titleize %> <%= actor.last_name.titleize %></h4>
+                      <p><%= time_ago_in_words(actor.created_at) %></p>
+                    </div>
+                   </div>
                     <div class="card-infos">
                       <ul class="list-inline">
-                      <% if actor.first_name? && actor.last_name? %>
                         <li>
-                        <%= actor.first_name.titleize %> <%= actor.last_name.titleize %>
+                          <h4></h4>
                         </li>
                       <% end %>
                       </ul>
                     </div>
-              </div>
+                </div>
               <div class="card-footer">
-                <p>posté par</p>
-                <img src="http://placehold.it/30x30" alt="" class="avatar">
-                <a href="#">Eleken</a> <!-- user qui l'a ajouté -->
+                <p>posté par <em><%= actor.user.email %></em></p>
               </div>
             </div>
           <% end %>

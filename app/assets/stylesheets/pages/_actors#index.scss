@@ -1,6 +1,6 @@
 .wrapper-actors {
   background-color: #A5DEE5;
-  height: 100vh;
+  min-height: 100vh;
 }
 .card-actor {
   margin: 3px;
@@ -10,18 +10,45 @@
   padding: 10px;
   border-radius: 2px;
   box-shadow: 1px 1px 2px #E6E6E6;
-  max-width:300px;
+  min-width:280px;
 }
 .card-picture {
   height: 250px;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 .list-inline {
-  padding: 10px;
+  padding: 5px;
   display: flex;
   justify-content: space-around;
+  h4 {
+    font-family: 'Bungee', cursive;
+    color: black;
+  }
 }
+.card-footer p {
+  font-size: 12px;
+  font-family: 'Dosis', sans-serif;
+  color: white;
+}
+.card-hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  opacity: 0;
+  &:hover {
+  opacity: 1;
+  transition: ease all 0.5s;
+  }
+}
+
+
+
+
 // .card-actors {
 //   margin-top: 26px;
 //   height: 300px;
