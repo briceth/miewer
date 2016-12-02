@@ -1,25 +1,22 @@
-.wrapper-cards {
-  background-color: #F57170;
+.wrapper-actors {
+  background-color: #A5DEE5;
   height: 100vh;
 }
-.card {
+.card-actors {
   margin-top: 26px;
   height: 300px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
-  box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0px 4px 46px 0 rgba(0, 0, 0, 0.5);
   border-radius: 2px;
+  &:hover {
+    box-shadow: 0px 4px 46px 0 rgba(0, 0, 0, 0.5);
+    transition: ease all 0.4s;
+  }
 }
 
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
 .card-description {
   position: absolute;
   bottom: 10px;

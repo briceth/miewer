@@ -1,19 +1,31 @@
-<div class="wrapper">
+<div class="wrapper-actors">
   <div class="container">
     <div class="row">
-        <% @actors.each do |actor| %>
-          <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <% @actors.each do |actor, index| %>
+          <div class="col-xs-12 col-sm-4 col-md-3">
             <%= link_to actor_path(actor) do %>
-              <%= div_for actor do %>
-                <%= actor.first_name.titleize %>
-                <%= actor.last_name.titleize %>
-                <% if actor.image_id? %>
-                  <%= cl_image_tag actor.image_id, height: 50, width: 70, crop: :fill %>
+                <div class="card-actors" id="actor_<%= index%>" style="background-image:url('<%= actor.image_id? ? cloudinary_url(actor.image_id, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>');">
+                      <div class="card-description">
+                      <% if actor.first_name? && actor.last_name? %>
+                        <h3><%= actor.first_name.titleize %><%= actor.last_name.titleize %></h3>
+                        <% end %>
+                      </div>
+                </div>
                 <% end %>
-              <% end %>
-            <% end %>
-          </div>
+              </div>
         <% end %>
     </div>
   </div>
 </div>
+
+<!-- <div class="col-xs-12 col-md-6 col-md-offset-3">
+            <%#= link_to actor_path(actor) do %>
+              <%#= div_for actor do %>
+                <%#= actor.first_name.titleize %>
+                <%#= actor.last_name.titleize %>
+                <%# if actor.image_id? %>
+                  <%#= cl_image_tag actor.image_id, height: 50, width: 70, crop: :fill %>
+                <%# end %>
+              <%# end %>
+            <%# end %>
+          </div> -->

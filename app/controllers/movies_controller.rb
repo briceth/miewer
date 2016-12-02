@@ -15,12 +15,16 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.new(movie_params)
     @movie.actors.first.user_id = current_user.id
     @movie.user = current_user
+
+    if params[:movie][:actors_attributes].present?
+      @movie.actors.first.profession = "Acteur"
+    end
+
     if @movie.save
       redirect_to movies_path, notice: "votre film a été ajouté!"
     else
       redirect_to movies_path, alert: "Ce film existe déjà"
     end
-
   end
 
   private
