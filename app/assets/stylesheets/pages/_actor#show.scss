@@ -1,4 +1,30 @@
 .wrapper-actor-info {
   background-color: #31708f;
-  height: 100vh;
+  min-height: 100vh;
+  color: white;
+}
+#actor-div {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+.actor-profile {
+  padding-top: 3em;
+  // flex: 0 0 50%;
+  // background-color: #66CCFF;
+}
+#acteur-background {
+  height:100vh;
+  position: relative;
+}
+.actors-infos {
+  position: absolute;
+  top: 55px;
+  left: 25px;
+}
+.actor-reviews {
+  position: absolute;
+  bottom: 75px;
+  left: 25px;
+  width: 80%;
 }
