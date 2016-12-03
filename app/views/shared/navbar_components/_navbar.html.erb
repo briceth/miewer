@@ -11,12 +11,12 @@
 
   <% if user_signed_in? %>
 
-    <%= link_to actors_path, class: "navbar-brand" do  %>
-      <%= image_tag "actors.png", :data-content: "Acteurs"} %>
+    <%= link_to actors_path do  %>
+      <%= image_tag "actors.png", class: "navbar-brand", data: { content: "Acteurs" } %>
     <% end %>
 
-    <%= link_to movies_path, class: "navbar-brand" do %>
-      <%= image_tag "movies.png", data: { content: "Films" } %>
+    <%= link_to movies_path do %>
+      <%= image_tag "movies.png", class: "navbar-brand", data: { content: "Films" } %>
     <% end %>
     <div class="navbar-item">
       <div class="dropdown">

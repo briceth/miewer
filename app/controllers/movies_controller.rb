@@ -9,6 +9,10 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @last_reviews = @movie.reviews.last(5)
+    @reviews = @last_reviews.select do |review|
+      review.persisted?
+    end
   end
 
   def create
@@ -23,7 +27,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path, notice: "votre film a été ajouté!"
     else
-      redirect_to movies_path, alert: "Ce film existe déjà"
+      render 'movies/index', alert: "Ce film existe déjà"
     end
   end
 

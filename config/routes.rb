@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
 
   resources :movies, only: [:index, :show, :create] do
-    concerns :reviews, only: [:new, :create]
+    concerns :reviews, only: [:create]
     resources :actors, module: :movies
   end
   resources :actors, only: [:index, :show] do
-    concerns :reviews, only: [:new, :create]
+    concerns :reviews, only: [:create]
       resources :movies
   end
 

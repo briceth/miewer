@@ -6,9 +6,10 @@
           <%= div_for(@movie, class: "foo") do |movie|%>
             <h3><strong><%= movie.title.titleize %></strong></h3>
             <p><%= movie.description %></p>
-            <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em></p>
+            <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em> - <%= pluralize @reviews.size, "commentaire" %></p>
+
             <div id="reviews">
-              <% if movie.reviews.blank? %>
+              <% if @reviews.blank? %>
                 <p>Soyez le premier à un mettre un commentaire sur <strong><%= movie.title %></strong></p>
               <% else %>
                 <%= render partial: "reviews/reviews", locals: {reviewable: movie} %>

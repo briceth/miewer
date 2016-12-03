@@ -22,8 +22,12 @@
                 <p><%= @actor.biography %></p>
                 </div>
                 <div class="actor-reviews">
-                  <p><%= pluralize(@actor.reviews.count, "review") %></p>
-                  <p><%= render partial: "reviews/reviews", locals: {reviewable: @actor}, class: "review" %></p>
+                  <p><%= pluralize @reviews.size, "commentaire" %></p>
+                  <% if @actor.reviews.blank? %>
+                    <p><Soyez la permière personne à laisser un commentaire!/p>
+                  <% else %>
+                    <p><%= render partial: "reviews/reviews", locals: {reviewable: @actor}, class: "review" %></p>
+                  <% end %>
                   <%= render partial: "reviews/form", locals: {reviewable: @actor} %>
                 </div>
             </div>
