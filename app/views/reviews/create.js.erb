@@ -1,1 +1,6 @@
-$('#reviews').append("<%= j render partial: "reviews/reviews", locals: {reviewable: @review} %>");
+
+var new_review = $("<%= j render partial: "reviews/reviews", locals: {reviewable: @review} %>").hide();
+
+$('#reviews').append(new_review);
+
+new_review.slideDown();

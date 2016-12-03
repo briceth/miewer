@@ -23,5 +23,5 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :reviewable, polymorphic: true
 
-  validates :body, presence: true
+  validates :body, presence: true, length: { minimum: 3 }
 end
