@@ -11,12 +11,14 @@
                       <h3><%= movie.title.titleize %></h3>
                     </div>
                 </div>
+                <% if movie.user == current_user %>
                 <div data-movie-id="<%= movie.id %>">
                   <%= link_to movie, method: :delete, data: {confirm: "Are you sure?"} do %>
                     <%= image_tag 'bin-movie.png', class: "navbar-brand" %>
-                <% end %>
+                  <% end %>
                 </div>
                 <% end %>
+               <% end %>
               </div>
             <% end %>
           </div>

@@ -34,6 +34,7 @@ class MoviesController < ApplicationController
   def destroy
     if @movie.user = current_user
       @movie.destroy
+      redirect_to movies_path, notice: "votre film a été supprimé!"
     end
   end
 

@@ -7,7 +7,6 @@
             <h3><strong><%= movie.title.titleize %></strong></h3>
             <p><%= movie.description %></p>
             <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em> - <strong class="number-reviews"><%#= pluralize @reviews.size, "commentaire" %></strong></p>
-
             <div class="partial-reviews">
               <div id="reviews">
                 <% if @reviews.blank? %>

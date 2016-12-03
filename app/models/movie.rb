@@ -40,4 +40,5 @@ validates :picture, presence: true
   validates_associated :actors
 
   scope :available, -> { where(available: :true) }
+
 end

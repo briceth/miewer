@@ -1,30 +1,61 @@
+
 .wrapper-actor-info {
-  background-color: #31708f;
+  background-color:#31708f;
   min-height: 100vh;
-  color: white;
 }
-#actor-div {
+.display {
   display: flex;
   align-items:center;
-  justify-content:center;
+  height: 563px;
 }
-.actor-profile {
-  padding-top: 3em;
-  // flex: 0 0 50%;
-  // background-color: #66CCFF;
+.actor {
+  background-color: white;
+  box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding-left: 50px;
+  padding-right: 50px;
+  h3 {
+    padding-top: 5px;
+  }
 }
-#acteur-background {
-  height:100vh;
-  position: relative;
+.image-id-actor {
+  height: 70vh;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
-.actors-infos {
-  position: absolute;
-  top: 55px;
-  left: 25px;
+.image-movie {
+  box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);
 }
-#reviews {
-  position: absolute;
-  bottom: 75px;
-  left: 25px;
-  width: 80%;
-}
+
+
+// .wrapper-actor-info {
+//   background-color: #31708f;
+//   min-height: 100vh;
+//   color: white;
+// }
+// #actor-div {
+//   display: flex;
+//   align-items:center;
+//   justify-content:center;
+// }
+// .actor-profile {
+//   padding-top: 3em;
+//   // flex: 0 0 50%;
+//   // background-color: #66CCFF;
+// }
+// #acteur-background {
+//   height:100vh;
+//   position: relative;
+// }
+// .actors-infos {
+//   position: absolute;
+//   top: 55px;
+//   left: 25px;
+// }
+// #reviews {
+//   position: absolute;
+//   bottom: 75px;
+//   left: 25px;
+//   width: 80%;
+// }

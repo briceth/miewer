@@ -3,46 +3,46 @@
     <div class="row">
       <div id="actor-div">
         <div class="col-xs-12 col-md-6">
+          <div id="acteur-background">
+            <%= div_for(@actor) do |actor| %>
+            <div class="actors-infos">
+              <h3><%= actor.first_name.titleize %> <%= actor.last_name.titleize %></h3>
+              <p><strong><%= actor.profession.titleize %> - <%#= actor.age %><%#= actor.nationality.titleize %></strong></p>
+              <p><%= actor.biography %></p>
+                <p><%= pluralize @reviews.size, "commentaire" %></p>
+              </div>
+              <div class="partial-reviews">
+                <div id="reviews">
+                  <% if actor.reviews.blank? %>
+                    <p><Soyez la permière personne à laisser un commentaire!/p>
+                  <% else %>
+                    <% @reviews.each do |review| %>
+                      <p><%= render partial: "reviews/reviews", locals: {reviewable: review}, class: "review" %></p>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div id="new-review">
+                  <%= render partial: "reviews/form", locals: {reviewable: actor} %>
+                </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
           <div class="actor-profile">
-            <%= cl_image_tag @actor.image_id, height: 400, width: 400, crop: :fill, class: "image-movie" %>
-            <p>Filmographie:</p>
+            <div class="image-id-actor">
+              <%= cl_image_tag @actor.image_id, height: 400, width: 400, crop: :fill, class: "image-movie" %>
+              </div>
+              <p>Filmographie:</p>
               <% @actor.movies.each do |actor_movies| %>
                 <div class="actor_movies">
                   <%= cl_image_tag actor_movies.picture, height: 90, width: 70, crop: :fill %>
                 </div>
-                  <%#= movie.title.titleize %>
-              <% end %>
-            </div>
-          </div>
-          <div class="col-xs-12 col-md-6">
-            <div id="acteur-background">
-              <%= div_for(@actor) do |actor| %>
-
-              <div class="actors-infos">
-                <h3><%= actor.first_name.titleize %> <%= actor.last_name.titleize %></h3>
-                <p><strong><%= actor.profession.titleize %> - <%#= actor.age %><%#= actor.nationality.titleize %></strong></p>
-                <p><%= actor.biography %></p>
-                  <p><%= pluralize @reviews.size, "commentaire" %></p>
-                </div>
-                <div class="partial-reviews">
-                  <div id="reviews">
-                    <% if actor.reviews.blank? %>
-                      <p><Soyez la permière personne à laisser un commentaire!/p>
-                    <% else %>
-                      <% @reviews.each do |review| %>
-                        <p><%= render partial: "reviews/reviews", locals: {reviewable: review}, class: "review" %></p>
-                      <% end %>
-                    <% end %>
-                  </div>
-                  <div id="new-review">
-                    <%= render partial: "reviews/form", locals: {reviewable: actor} %>
-                  </div>
-              </div>
-              <% end %>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

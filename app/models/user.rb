@@ -38,4 +38,5 @@ class User < ApplicationRecord
             :presence => true,
             :uniqueness => {:case_sensitive => false},
             length: { minimum: 2 }
+
 end
