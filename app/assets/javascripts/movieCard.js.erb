@@ -19,6 +19,16 @@ $(document).ready(function() {
       });
     });
   });
+
+  $('.btn-home').mouseenter(function() {
+      $(this).removeClass('fadeInDown');
+      $(this).addClass('shake');
+  });
+  $('.btn-home').mouseleave(function() {
+      $(this).removeClass('shake');
+  });
+
+
 });
 
 

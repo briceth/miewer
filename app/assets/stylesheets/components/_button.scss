@@ -1,8 +1,9 @@
 .btn-medium {
   color: #FFFF66;
-  border: 5px solid #FFFF66;
+  border: 3px solid #FFFF66;
   padding: 15px 75px;
-  border-radius: 50px;
+  border-radius-top-left: 3px;
+  border-radius-top-right: 3px;
   font-weight: lighter;
   opacity: 1;
 }
