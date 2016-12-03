@@ -16,22 +16,29 @@
           </div>
           <div class="col-xs-12 col-md-6">
             <div id="acteur-background">
+              <%= div_for(@actor) do |actor| %>
+
               <div class="actors-infos">
-                <h3><%= @actor.first_name.titleize %> <%= @actor.last_name.titleize %></h3>
-                <p><strong><%= @actor.profession.titleize %> - <%#= @actor.age %><%#= @actor.nationality.titleize %></strong></p>
-                <p><%= @actor.biography %></p>
+                <h3><%= actor.first_name.titleize %> <%= actor.last_name.titleize %></h3>
+                <p><strong><%= actor.profession.titleize %> - <%#= actor.age %><%#= actor.nationality.titleize %></strong></p>
+                <p><%= actor.biography %></p>
                   <p><%= pluralize @reviews.size, "commentaire" %></p>
                 </div>
-                  <% if @actor.reviews.blank? %>
-                    <p><Soyez la permière personne à laisser un commentaire!/p>
-                  <% else %>
-                <div id="reviews">
-                    <% @reviews.each do |review| %>
-                      <p><%= render partial: "reviews/reviews", locals: {reviewable: review}, class: "review" %></p>
+                <div class="partial-reviews">
+                  <div id="reviews">
+                    <% if actor.reviews.blank? %>
+                      <p><Soyez la permière personne à laisser un commentaire!/p>
+                    <% else %>
+                      <% @reviews.each do |review| %>
+                        <p><%= render partial: "reviews/reviews", locals: {reviewable: review}, class: "review" %></p>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                  <%= render partial: "reviews/form", locals: {reviewable: @actor} %>
-                </div>
+                  </div>
+                  <div id="new-review">
+                    <%= render partial: "reviews/form", locals: {reviewable: actor} %>
+                  </div>
+              </div>
+              <% end %>
             </div>
           </div>
         </div>
