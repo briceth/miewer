@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show]
+  before_action :set_movie, only: [:show, :destroy]
 
   def index
     @movies = Movie.all
@@ -28,6 +28,12 @@ class MoviesController < ApplicationController
       redirect_to movies_path, notice: "votre film a été ajouté!"
     else
       render 'movies/index', alert: "Ce film existe déjà"
+    end
+  end
+
+  def destroy
+    if @movie.user = current_user
+      @movie.destroy
     end
   end
 

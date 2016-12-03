@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :movies, only: [:index, :show, :create, :delete] do
+  resources :movies, only: [:index, :show, :create, :destroy] do
     concerns :reviews, only: [:create]
     resources :actors, module: :movies
   end

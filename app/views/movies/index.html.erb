@@ -10,7 +10,12 @@
                     <div class="card-description">
                       <h3><%= movie.title.titleize %></h3>
                     </div>
-              </div>
+                </div>
+                <div data-movie-id="<%= movie.id %>">
+                  <%= link_to movie, method: :delete, data: {confirm: "Are you sure?"} do %>
+                    <%= image_tag 'bin-movie.png', class: "navbar-brand" %>
+                <% end %>
+                </div>
                 <% end %>
               </div>
             <% end %>
