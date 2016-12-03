@@ -12,7 +12,9 @@
               <% if @reviews.blank? %>
                 <p>Soyez le premier à un mettre un commentaire sur <strong><%= movie.title %></strong></p>
               <% else %>
-                <%= render partial: "reviews/reviews", locals: {reviewable: movie} %>
+                <% @reviews.each do |review| %>
+                 <%= render partial: "reviews/reviews", locals: {reviewable: review} %>
+                <% end %>
               <% end %>
             </div>
             <div id="new-review">
