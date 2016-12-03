@@ -1,7 +1,6 @@
 .wrapper-movie {
   background-color: #21C5BD;
   min-height: 100vh;
-
 }
 .display {
   display: flex;
@@ -14,14 +13,9 @@
   border-radius: 3px;
   padding-left: 50px;
   padding-right: 50px;
-
   h3 {
     padding-top: 5px;
-    // font-family: 'Bungee', cursive;
   }
-  // p {
-  //   // font-family: 'Dosis', sans-serif;
-  // }
 }
 .picture {
   height: 100vh;
