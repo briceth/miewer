@@ -13,7 +13,8 @@
             <div class="form-group">
               <%= f.input :title %>
               <%= f.input :description %>
-              <%= f.date :date, input_html: { class: "date-picker"} %>
+              <%= f.input :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year, discard_day: true,order: [:month, :year] %>
               <%= f.label :category %>
               <%= f.select :category, [ 'Action', 'Horreur', 'Dramatique', 'Comédie', 'Documentaire' ], prompt: "Sélectionnez"  %>
               <%= f.input :picture %>

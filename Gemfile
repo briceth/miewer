@@ -21,7 +21,6 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'annotate'
-gem 'jquery_datepicker'
 
 group :development, :test do
   gem 'binding_of_caller'
