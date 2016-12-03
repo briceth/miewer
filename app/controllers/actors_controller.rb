@@ -7,7 +7,7 @@ class ActorsController < ApplicationController
   def show
     @actor = Actor.includes(:movies).find(params[:id])
 
-    @last_reviews = @actor.reviews.last(5)
+    @last_reviews = @actor.reviews.last(9)
     @reviews = @last_reviews.select do |review|
       review.persisted?
     end

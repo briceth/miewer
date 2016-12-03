@@ -7,19 +7,19 @@
             <%= div_for(@actor, class: "foo") do |actor| %>
             <div class="actors-infos">
               <h3><%= actor.first_name.titleize %> <%= actor.last_name.titleize %></h3>
-              <p><strong><%= actor.profession.titleize %> - <%#= actor.age %><%#= actor.nationality.titleize %></strong></p>
+              <p><strong><%= actor.profession.titleize %></strong></p>
               <p><%= actor.biography %></p>
-                <p><%= pluralize @reviews.size, "commentaire" %></p>
-              </div>
-              <div class="partial-reviews">
-                <div id="reviews">
-                  <% if actor.reviews.blank? %>
-                    <p><Soyez la permière personne à laisser un commentaire!/p>
-                  <% else %>
-                    <% @reviews.each do |review| %>
-                      <p><%= render partial: "reviews/reviews", locals: {reviewable: review}, class: "review" %></p>
-                    <% end %>
+              <p><%= pluralize @reviews.size, "commentaire" %></p>
+            </div>
+            <div class="partial-reviews">
+              <div id="reviews">
+                <% if actor.reviews.blank? %>
+                  <p><Soyez la permière personne à laisser un commentaire!/p>
+                <% else %>
+                  <% @reviews.each do |review| %>
+                    <p><%= render partial: "reviews/reviews", locals: {reviewable: review}, class: "review" %></p>
                   <% end %>
+                <% end %>
                 </div>
                 <div id="new-review">
                   <%= render partial: "reviews/form", locals: {reviewable: actor} %>

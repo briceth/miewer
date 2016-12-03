@@ -1,32 +1,34 @@
 <div class="wrapper-movie">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <div class="display">
-          <%= div_for(@movie, class: "foo") do |movie|%>
-            <h3><strong><%= movie.title.titleize %></strong></h3>
-            <p><%= movie.description %></p>
-            <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em> - <strong class="number-reviews"><%#= pluralize @reviews.size, "commentaire" %></strong></p>
-            <div class="partial-reviews">
-              <div id="reviews">
-                <% if @reviews.blank? %>
-                  <p>Soyez la première personne à un mettre un commentaire sur <strong><%= movie.title %></strong></p>
-                <% else %>
-                  <% @reviews.each do |review| %>
-                   <%= render partial: "reviews/reviews", locals: {reviewable: review} %>
+      <div id="movie-id">
+        <div class="col-xs-12 col-md-6">
+          <div class="display">
+            <%= div_for(@movie, class: "foo") do |movie|%>
+              <h3><strong><%= movie.title.titleize %></strong></h3>
+              <p><%= movie.description %></p>
+              <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em></p>
+              <div class="partial-reviews">
+                <div id="reviews">
+                  <% if @reviews.blank? %>
+                    <p>Soyez la première personne à un mettre un commentaire sur <strong><%= movie.title %></strong></p>
+                  <% else %>
+                    <% @reviews.each do |review| %>
+                     <%= render partial: "reviews/reviews", locals: {reviewable: review} %>
+                    <% end %>
                   <% end %>
-                <% end %>
+                </div>
+                <div id="new-review">
+                  <%= render partial: "reviews/form", locals: {reviewable: movie} %>
+                </div>
               </div>
-              <div id="new-review">
-                <%= render partial: "reviews/form", locals: {reviewable: movie} %>
-              </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <div class="xs-12 col-md-6">
-        <div class="picture">
-          <%= cl_image_tag @movie.picture, height: 525, width: 400, crop: :fill, class: "image-movie" %>
+        <div class="xs-12 col-md-6">
+          <div class="picture">
+            <%= cl_image_tag @movie.picture, height: 525, width: 400, crop: :fill, class: "image-movie" %>
+          </div>
         </div>
       </div>
     </div>

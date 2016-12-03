@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @last_reviews = @movie.reviews
+    @last_reviews = @movie.reviews.last(9)
     @reviews = @last_reviews.select do |review|
       review.persisted?
     end
