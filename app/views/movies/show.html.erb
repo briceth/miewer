@@ -6,7 +6,7 @@
           <%= div_for(@movie, class: "foo") do |movie|%>
             <h3><strong><%= movie.title.titleize %></strong></h3>
             <p><%= movie.description %></p>
-            <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em> - <strong class="number-reviews"><%= pluralize @reviews.size, "commentaire" %></strong></p>
+            <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em> - <strong class="number-reviews"><%#= pluralize @reviews.size, "commentaire" %></strong></p>
 
             <div id="reviews">
               <% if @reviews.blank? %>

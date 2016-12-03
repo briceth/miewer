@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   end
   resources :actors, only: [:index, :show] do
     concerns :reviews, only: [:create]
-      resources :movies
+      # post :review, on: :member
+
+      # post '/proposals/search' => 'proposals#search'
+      # resources :movies
   end
 
   resources :authors, only: [:index, :show] do

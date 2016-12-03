@@ -20,13 +20,15 @@
                 <h3><%= @actor.first_name.titleize %> <%= @actor.last_name.titleize %></h3>
                 <p><strong><%= @actor.profession.titleize %> - <%#= @actor.age %><%#= @actor.nationality.titleize %></strong></p>
                 <p><%= @actor.biography %></p>
-                </div>
-                <div class="actor-reviews">
                   <p><%= pluralize @reviews.size, "commentaire" %></p>
+                </div>
                   <% if @actor.reviews.blank? %>
                     <p><Soyez la permière personne à laisser un commentaire!/p>
                   <% else %>
-                    <p><%= render partial: "reviews/reviews", locals: {reviewable: @actor}, class: "review" %></p>
+                <div id="reviews">
+                    <% @reviews.each do |review| %>
+                      <p><%= render partial: "reviews/reviews", locals: {reviewable: review}, class: "review" %></p>
+                    <% end %>
                   <% end %>
                   <%= render partial: "reviews/form", locals: {reviewable: @actor} %>
                 </div>
