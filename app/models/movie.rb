@@ -33,16 +33,13 @@ class Movie < ApplicationRecord
             presence: true,
             uniqueness: true,
             length: { minimum: 2 }
-validates :description, length: { minimum: 10, maximum: 2000 }
-validates :picture, presence: true
+  validates :description, presence: true,length: { minimum: 10, maximum: 2000 }
+  validates :picture, presence: true
+  validates :available, presence: true
 
   accepts_nested_attributes_for :actors
   validates_associated :actors
 
   scope :available, -> { where(available: :true) }
-
-  def posted?(user)
-    self.user == user
-  end
 
 end

@@ -31,7 +31,6 @@ class User < ApplicationRecord
 
   has_many :actors
   has_many :movies
-  has_many :authors
   has_many :reviews
 
  validates :username,
