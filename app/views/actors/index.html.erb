@@ -1,40 +1,40 @@
 <div class="wrapper-actors">
   <div class="container">
     <div class="row">
-<% if @actors.any? %>
-      <% @actors.each do |actor, index| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= link_to actor_path(actor) do %>
-            <div class="card-actor">
-              <div class="card-body">
-                <div class="card-picture" id="actor_<%= index%>" style="background-image:url('<%= actor.image_id? ? cloudinary_url(actor.image_id, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>')">
-                    <div class="card-hover">
-                      <% if actor.first_name? && actor.last_name? %>
-                        <p><%= time_ago_in_words(actor.created_at) %></p><br>
-                        <p><%= pluralize actor.reviews.size, "commentaire" %></p>
+      <% if @actors.any? %>
+        <% @actors.each do |actor, index| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <%= link_to actor_path(actor) do %>
+              <div class="card-actor">
+                <div class="card-body">
+                  <div class="card-picture" id="actor_<%= index%>" style="background-image:url('<%= actor.image_id? ? cloudinary_url(actor.image_id, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>')">
+                      <div class="card-hover">
+                        <% if actor.first_name? && actor.last_name? %>
+                          <p><%= time_ago_in_words(actor.created_at) %></p><br>
+                          <p><%= pluralize actor.reviews.size, "commentaire" %></p>
+                      </div>
+                    </div>
+                    <div class="card-infos">
+                      <ul class="list-inline">
+                        <li>
+                          <h4><%= actor.first_name.titleize %> <%= actor.last_name.titleize %></h4>
+                        </li>
+                      <% end %>
+                      </ul>
                     </div>
                   </div>
-                  <div class="card-infos">
-                    <ul class="list-inline">
-                      <li>
-                        <h4><%= actor.first_name.titleize %> <%= actor.last_name.titleize %></h4>
-                      </li>
-                    <% end %>
-                    </ul>
+                  <div class="card-footer">
+                    <p>posté par <em class="user-post"><%= actor.user.username %></em></p>
                   </div>
-                </div>
-                <div class="card-footer">
-                  <p>posté par <em class="user-post"><%= actor.user.username %></em></p>
-                </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       <% else %>
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
-       <h1> Allez poster votre premier film!</h1>
-       <p><%= link_to '=> par içi', movies_path %></p>
-      </div>
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+           <h1> Allez poster votre premier film!</h1>
+           <p><%= link_to '=> par içi', movies_path %></p>
+        </div>
       <% end %>
     </div>
   </div>

@@ -25,9 +25,9 @@ class MoviesController < ApplicationController
     end
 
     if @movie.save
-      redirect_to movies_path, notice: "votre film a été ajouté!"
+      redirect_to movies_path, notice: "'#{@movie.title}' a été posté!"
     else
-      render 'movies/index', alert: "Ce film existe déjà"
+      flash[:notice] = "Oops, remplissez toutes les cases"
     end
   end
 

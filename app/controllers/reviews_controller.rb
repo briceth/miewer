@@ -6,34 +6,34 @@ class ReviewsController < ApplicationController
       @review = @reviewable.reviews.new(reviews_params)
       @review.user = current_user
 
-        if @review.save
+      if @review.save
+      respond_to do |format|
+        format.html { redirect_to @reviewable }
+        format.js
+      end
+      else
         respond_to do |format|
-          format.html { redirect_to @reviewable }
+          format.html { render 'movies/show' }
           format.js
         end
-        else
-          respond_to do |format|
-            format.html { render 'movies/show' }
-            format.js
-          end
-        end
+      end
 
     elsif(params.has_key?(:actor_id))
       @reviewable = Actor.find(params[:actor_id])
       @review = @reviewable.reviews.new(reviews_params)
       @review.user = current_user
 
-        if @review.save
+      if @review.save
+      respond_to do |format|
+        format.html { redirect_to @reviewable }
+        format.js
+      end
+      else
         respond_to do |format|
-          format.html { redirect_to @reviewable }
+          format.html { render 'actors/show' }
           format.js
         end
-        else
-          respond_to do |format|
-            format.html { render 'actors/show' }
-            format.js
-          end
-        end
+      end
     end
   end
 
