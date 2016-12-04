@@ -15,11 +15,11 @@
     <% if user_signed_in? %>
 
       <%= link_to actors_path do  %>
-        <%= image_tag "actors.png", class: "navbar-brand", data: { content: "Acteurs" } %>
+        <%= image_tag "actors.png", class: "navbar-movies-brand", data: { content: "Acteurs" } %>
       <% end %>
 
       <%= link_to movies_path do %>
-        <%= image_tag "movies.png", class: "navbar-brand", data: { content: "Films" } %>
+        <%= image_tag "movies.png", class: "navbar-movies-brand", data: { content: "Films" } %>
       <% end %>
       <div class="navbar-item">
         <div class="dropdown">

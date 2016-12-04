@@ -28,7 +28,12 @@ $(document).ready(function() {
       $(this).removeClass('shake');
   });
 
-   $(".navbar-brand").popover({
+   $(".navbar-movies-brand").popover({
+    html: true,
+    trigger: "hover",
+    placement: "bottom"
+  });
+   $(".navbar-wagon-brand").popover({
     html: true,
     trigger: "hover",
     placement: "bottom"
