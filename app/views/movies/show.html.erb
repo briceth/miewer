@@ -8,20 +8,16 @@
               <h3><strong><%= movie.title.titleize %></strong></h3>
               <p><%= movie.description %></p>
               <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em></p>
+
               <div class="partial-reviews">
-                <div id="reviews">
-                  <% if @reviews.blank? %>
-                    <p>Soyez la première personne à un mettre un commentaire sur <strong><%= movie.title %></strong></p>
-                  <% else %>
-                    <% @reviews.each do |review| %>
-                     <%= render partial: "reviews/reviews", locals: {reviewable: review} %>
-                    <% end %>
-                  <% end %>
-                </div>
-                <div id="new-review">
-                  <%= render partial: "reviews/form", locals: {reviewable: movie} %>
-                </div>
+
+                <%= render partial: 'reviews/reviews_partial' %>
+
+              <div id="new-review">
+                <%= render partial: "reviews/form", locals: {reviewable: movie} %>
               </div>
+             </div>
+
             <% end %>
           </div>
         </div>
