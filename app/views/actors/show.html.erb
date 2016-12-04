@@ -13,8 +13,15 @@
             </div>
 
             <div class="partial-reviews">
+              <% if @reviews.blank? %>
 
-              <%= render partial: 'reviews/reviews_partial' %>
+                <p>Soyez la première personne à poster un commentaire sur <strong><%= actor.first_name %> <%= actor.last_name %></strong></p>
+
+              <% else %>
+
+                <%= render partial: 'reviews/reviews_partial' %>
+
+              <% end %>
 
               <div id="new-review">
 

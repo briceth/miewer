@@ -10,8 +10,15 @@
               <p>posted by <strong><%= movie.user.username %></strong> - <em><%= time_ago_in_words(movie.created_at) %></em></p>
 
               <div class="partial-reviews">
+                <% if @reviews.blank? %>
+
+                  <p>Soyez la première personne à poster un commentaire sur <strong><%= movie.title %></strong></p>
+
+                <% else %>
 
                 <%= render partial: 'reviews/reviews_partial' %>
+
+                <% end %>
 
               <div id="new-review">
 
