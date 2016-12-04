@@ -1,19 +1,19 @@
-## Installer Postgresql sur sa machine
+#### Installer Postgresql sur sa machine
 ###### brew install postgresql
 ###### brew services start postgresql
 
-## git clone git@github.com:briceth/miewer.git
+#### git clone git@github.com:briceth/miewer.git
 
-## cd miewer
+#### cd miewer
 
-## bundle install
+#### bundle install
 
-## rails db:create db:migrate
+#### rails db:create db:migrate
 
-## Cloudinary
+#### Cloudinary
 ###### Créer un dossier application.yml
 ###### Ouvrir un compte sur cloudinary
 ###### Récupérer la clef d'API et la mettre dans le dossier application.YML
 ###### CLOUDINARY_URL: "cloudinary://............."
 
-## rails s
+#### rails s
