@@ -1,9 +1,10 @@
 .wrapper-movie {
-  background-color: #21C5BD;
-  min-height: 150vh;
+  background-color: #a29f9f;
+  min-height: 100vh;
 }
 .display {
   height: 563px;
+  padding-top: 35px;
 }
 .foo {
   background-color: white;
@@ -12,14 +13,13 @@
   padding-left: 50px;
   padding-right: 50px;
   h3 {
-    padding-top: 5px;
+    padding-top: 10px;
   }
 }
 .picture {
   height: 100vh;
-  display: flex;
-  align-items:center;
-  justify-content: center;
+  padding-top: 30px;
+  padding-left: 40px;
 }
 .image-movie {
   box-shadow: 5px 13px 0px 0 rgba(0, 0, 0, 0.2);

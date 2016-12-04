@@ -1,5 +1,5 @@
 .wrapper-actors {
-  background-color: #e8eff3;
+  background-color: #e2f2ff;
   min-height: 100vh;
 }
 .col-xs-12 a {
@@ -42,10 +42,13 @@
     text-decoration: none;
   }
 }
-.card-footer p {
+.card-footer {
+  margin-top: 4px;
+  p {
   font-size: 12px;
   font-family: 'Dosis', sans-serif;
-  color: white;
+  color: grey;
+  }
 }
 .card-hover {
   position: absolute;
@@ -59,9 +62,6 @@
   opacity: 1;
   transition: ease all 0.5s;
   }
-}
-.card-footer {
-  margin-top: 4px;
 }
 .user-post:hover {
   color:#CC66FF;

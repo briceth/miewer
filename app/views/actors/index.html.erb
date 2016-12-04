@@ -11,7 +11,7 @@
                       <div class="card-hover">
                         <% if actor.first_name? && actor.last_name? %>
                           <p><%= time_ago_in_words(actor.created_at) %></p><br>
-                          <p><%= pluralize actor.reviews.size, "commentaire" %></p>
+                          <p><%= pluralize actor.reviews.size, "review" %></p>
                       </div>
                     </div>
                     <div class="card-infos">
