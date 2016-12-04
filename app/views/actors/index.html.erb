@@ -1,6 +1,7 @@
 <div class="wrapper-actors">
   <div class="container">
     <div class="row">
+<% if @actors.any? %>
       <% @actors.each do |actor, index| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <%= link_to actor_path(actor) do %>
@@ -28,6 +29,12 @@
             </div>
           <% end %>
         </div>
+      <% end %>
+      <% else %>
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+       <h1> Allez poster votre premier film!</h1>
+       <p><%= link_to '=> par içi', movies_path %></p>
+      </div>
       <% end %>
     </div>
   </div>

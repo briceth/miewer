@@ -1,4 +1,4 @@
-<% if @movies.count >= 1 %>
+<% if @movies.any? %>
   <div class="wrapper-cards">
     <div class="container">
       <div class="row">
@@ -27,11 +27,18 @@
           </div>
         </div>
       </div>
-      <% else %>
-      <div class="col-xs-12 col-md-6 col-md-offset-4">
-        <h1>Post the first movie!!</1>
-      </div>
-    <% end %>
+<% else %>
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-3">
+    <h1>Postez votre "first movie"!</h1>
+    <p>Vous êtes désormais administrateur de Miewer, Bravo!</p>
+    <p>Votre mission, si toutefois vous l'acceptez, est de poster un bon film avec son acteur principal.</p>
+    <p>N'oubliez pas la photo :)</p>
+    <p>Bon courage...</p>
+    <div class="button-modal-no-movies-yet">
+      <h2><button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">Post a film</button></h2>
+    </div>
+  </div>
+<% end %>
 
 <%= render "shared/modal" %>
 
