@@ -27,7 +27,7 @@ class Movie < ApplicationRecord
   belongs_to :user, optional: true
   has_many :filmings, dependent: :destroy
   has_many :actors, through: :filmings
-  has_many :reviews, as: :reviewable
+  has_many :reviews, as: :reviewable, dependent: :destroy
 
   validates :title,
             presence: true,

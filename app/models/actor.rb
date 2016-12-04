@@ -28,6 +28,6 @@ class Actor < ApplicationRecord
   belongs_to :user
   has_many :filmings, dependent: :destroy
   has_many :movies, through: :filmings
-  has_many :reviews, as: :reviewable
+  has_many :reviews, as: :reviewable, dependent: :destroy
 
 end

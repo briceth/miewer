@@ -11,7 +11,7 @@ gem 'redis'
 gem 'cloudinary', '1.1.0'
 gem 'carrierwave'
 gem 'record_tag_helper', '~> 1.0'
-
+gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

@@ -25,7 +25,7 @@ class MoviesController < ApplicationController
     end
 
     if @movie.save
-      render :index, notice: "'#{@movie.title}' posté!"
+      redirect_to movies_path, notice: "'#{@movie.title}' posté!"
     else
       render :index, alert: "oops, remplissez les cases manquantes"
     end
