@@ -7,6 +7,9 @@
             <%= link_to movie_path(movie) do %>
               <div class="card" id="movie_<%= index + 1 %>" style="background-image:url('<%= movie.picture? ? cloudinary_url(movie.picture, height: 300, width: 400, crop: :fill, gravity: :face) : image_path('background.jpg') %>');">
                   <div class="card-category"><%= movie.category %></div>
+                  <% if movie.available? %>
+                  <div class="movie-available">En salle actuellement</div>
+                  <% end %>
                     <div class="card-description">
                       <h3><%= movie.title.titleize %></h3>
                     </div>
@@ -14,7 +17,7 @@
                 <% if movie.user == current_user %>
                 <div data-movie-id="<%= movie.id %>">
                   <%= link_to movie, method: :delete, data: {confirm: "Are you sure?"} do %>
-                    <%= image_tag 'bin-movie.png', class: "navbar-brand" %>
+                    <%= image_tag 'bin-movie.png', class: "bin" %>
                   <% end %>
                 </div>
                 <% end %>
