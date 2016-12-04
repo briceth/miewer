@@ -1,6 +1,6 @@
 <div id="reviews">
   <% if @reviews.blank? %>
-    <p>Soyez la première personne à poster un commentaire sur <strong><%= movie.title %></strong></p>
+    <p>Soyez la première personne à poster un commentaire sur <strong><%= @actor.first_name %> <%= @actor.last_name %></strong></p>
   <% else %>
     <% @reviews.each do |review| %>
      <%= render partial: "reviews/reviews", locals: {reviewable: review} %>
