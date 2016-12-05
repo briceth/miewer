@@ -1,5 +1,5 @@
-class RemoveUserIdToAuthors < ActiveRecord::Migration[5.0]
+class RemoveNationalityToActors < ActiveRecord::Migration[5.0]
   def change
-    remove_column :authors, :user_id, :integer
+    remove_column :actors, :nationality, :string
   end
 end

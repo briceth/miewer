@@ -1,5 +1,5 @@
-class AddAuthorIdToFilmings < ActiveRecord::Migration[5.0]
+class AddInfoToActors < ActiveRecord::Migration[5.0]
   def change
-    add_reference :filmings, :author, foreign_key: true
+    add_reference :actors, :info, :string
   end
 end

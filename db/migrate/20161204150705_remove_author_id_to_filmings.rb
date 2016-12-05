@@ -1,5 +1,5 @@
-class RemoveAuthorIdToFilmings < ActiveRecord::Migration[5.0]
+class RemoveInfoToActors < ActiveRecord::Migration[5.0]
   def change
-    remove_column :filmings, :author_id, :integer
+    remove_column :actors, :info, :string
   end
 end
